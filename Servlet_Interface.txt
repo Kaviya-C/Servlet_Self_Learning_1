@@ -1,0 +1,64 @@
+Servlet interface Provide common behaviour of  all the Servlets
+
+it is an interface we should implement the method which is present in servlet interface
+
+
+life cycle methods:
+these are invoked by web container:
+
+                 init ()
+                 service()
+                 destroy()
+non life cycle methods
+                 ServletConfig
+                 servletInfo
+
+init --  public void init(ServletConfig config)
+initialize the servlet
+it is invoked by the web container
+only once
+
+
+service()  -- public void service (ServletRequest req,ServletResponse res)
+it provides response for the incoming request
+take two things ServletRequest and ServletResponse
+for each request this method is invoked by the web container
+
+
+destroy() -- public void destroy()
+destroy the servlet only once
+
+
+getServletConfig     public ServletConfig getServletConfig ()
+returns the ServletConfig object
+
+getServletInfo 
+public string getServletInfo() 
+returns the information of servlet like version copyright etc
+
+
+
+Generic Servlet Class:
+
+
+GenericServlet is a class which implements serializable ,Servlet ,ServletConfig
+
+it provides all the imlementation of all the methods except the service methods
+
+bcoz of service() method generic servlet as a abstract class
+
+the class which extends GenericServlet compulsory 
+we have to give implementation of service() method
+
+
+
+HttpServlet Class:
+
+HttpServlet is an class which extends GenericServlet and implements serializable interface
+
+it provides http sepecific methods:
+
+service(ServletRequest ,ServletResponse)
+service(HttpServletRequest , HttpServletResponse)
+doGet(HttpServletRequest,HttpServletResponse)
+doPost() doPut() doHead() doOptions() doTrace() doDelete() , getLastModified(HttpServletRequest )
