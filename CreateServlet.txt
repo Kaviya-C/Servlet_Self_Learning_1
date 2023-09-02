@@ -1,0 +1,60 @@
+We can create servlet by
+
+          implementing servlet interface
+          inheriting or extending generic servlet abstract Class
+          inheriting or extending HttpServlet Class
+
+
+
+  Create a directory structure
+  create a servlet
+  compile the servlet
+  create the deployment descriptor
+  start the servlet and deploy the project
+  access the servlet
+
+
+  web-app -- inside WEB-INF classes and web.xml file is present
+  web-app  -- directly contains html css jsp files
+
+
+  COMPILE THE SERVLET:
+
+  in tomcat apache -- servlet-api.jar
+  weblogic          -- weblogic.jar
+  glassfish          --javaee.jar
+  jboss              -- javaee.jar
+
+CREATE THE DEPLOYMENT DESCRIPTOR 
+          web.xml is an deployment descriptor
+          inisde this 
+
+          web-app  
+          welcome-list-files
+          welcome-files
+          servlet
+          servlet-name
+          servlet-class
+          url-pattern
+          servlet-mapping
+          init-param
+          param-name
+          param-value
+          context-param
+          param-name
+          param-value
+          filter
+          filter-name
+          filter-class
+          filter-mapping
+          filter-name
+          url-pattern
+          
+          
+
+
+
+
+
+
+
