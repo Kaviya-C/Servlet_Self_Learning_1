@@ -1,0 +1,54 @@
+Server checks when first request is arrived
+
+is servlet is loaded
+if it is not loaded
+              load the servlet
+              create an instance of the servlet
+              calls the init() method by web container
+              calls the service() method by web container
+              calls the destroy() method if needed
+
+
+
+  how web container handles the request:
+
+            map the request with the servlet in the web.xml file
+            creates request and response object for this request
+            calls the init() method by the web container
+            calls the service() method on the thread
+            public service method internally calls the protected service method
+            protected service method internally calls the type (which type is belongs to)
+            if it is belonged to post method then internally calls the doPost() method
+            generate the response and send to the client
+            web container delete the request and response object
+            the thread is contained in a thread pool which is deleted depends upon the servlet             
+
+Public void service(ServletRequest request, ServletResponse response)
+{
+ internally it converts as 
+ HttpServletRequest 
+ HttpServletResponse
+} 
+
+protected void service(HttpServletRequest request,HttpServletResponse response)
+{
+ internally do
+if(method.equals("GET"))
+call the doGet()
+
+else 
+Call the doPost()
+
+}
+
+Web-archieve file present inside the lib folder
+outside of WEB-INF
+
+
+
+
+
+
+
+
+       
