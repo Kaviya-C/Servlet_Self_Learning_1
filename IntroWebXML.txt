@@ -1,0 +1,36 @@
+welcome-file-list is the element of web-app
+
+welcome-file-list contains welcome-file
+
+in that welcome-file we can include our own html file to give preferences
+
+the preferences:
+            welcome-file
+            html
+            htm
+            jsp
+
+all other file exists if welcome-file is there then preferences goes to welcome-file only
+
+
+load-on-startup is a tag which is subelement of servlet
+we can give positive negative value
+normally it goes from 0 to n
+
+<servlet>
+<servlet-name>first</servlet-name>
+<servlet-class>MyFirstServlet</servlet-class>
+<load-on-startup>0</load-on-startup>
+</servlet>
+
+<servlet>
+<servlet-name>second</servlet-name>
+<servlet-class>MySecondServlet</servlet-class>
+<load-on-startup>1</load-on-startup>
+</servlet>
+
+
+we create two servlet when we start run the project
+both will be run but the preferences of MyFirstServlet is high
+
+so MyFirstServlet will load first then MySecondServlet
