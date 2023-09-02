@@ -1,0 +1,38 @@
+Web Container maintains the life cycle of the servlet instance
+
+Servlet Class loaded 
+Create an instance of servlet
+call the init method
+call the service method
+call the destroy method
+
+new ready end state
+
+new --- after the instance of servlet is created
+
+ready  -- after the init method it is  in ready state
+
+end -- when it comes to the destroy method it will in end state
+
+
+first request for the servlet received by the web container ----------> servlet loaded
+
+
+web container creates an instance of servlet after loadig the servlet 
+this servlet creation happens only once
+-----------> Servlet instance created
+
+
+after instance of servlet web container calls the init 
+method only once to initialize the servlet ----------->init()
+
+
+
+for each request this method is invoked by the web container .------------> service()
+
+
+web container calls the destroy method before
+removing an instance of servlet from the service 
+to perform some clean up resources like memory thread etc
+----------destroy()
+
