@@ -1,0 +1,22 @@
+sendRedirect() is an method which is call by HttpServeletResponse interface 
+
+used to redirect the resources from one to another
+it accepts both relative and absolute url
+
+Difference between forward() and sendRedirect()
+
+forward()
+
+          forward() works on the server side 
+          it works only within the server
+          it is the method which presents in RequestDispatcher interface
+          it takes two arguments HttpServeletRequest and HttpServeletResponse
+          it always send same request and response objects to another servlet
+
+sendRedirect()
+
+           it is called by HttpServeletResponse interface
+           it contains one argument that is string url
+           it can work with client side
+           it can be used inside and outside of the server
+           it always send a new request
