@@ -1,0 +1,27 @@
+
+RequestDispatcher is an interface
+which is present inside of javax.servlet.RequestDispatcher
+
+it is an interface we cannot creat an instance
+
+getRequestDispatcher() is a method that returns a RequestDispatcher object
+
+we can call this method using request 
+RequestDispatcher dispatch = request.getRequestDispatcher();
+
+
+iniside of getRequestDispatcher() method we should pass the string to navigate to which resources?
+
+as it is an interface it contains two methods
+
+forward(HttpServeltRequest req,HttpServeletResponse res)
+           forwards a request from one servlet to another servlet
+
+it may be servlet or jsp or html file
+
+include(HttpServeletRequest req,HttpServeletResponse res)
+               include the content of another resources 
+
+it may be servlet or jsp or html file
+
+both forward and include throws servletException and IOException
