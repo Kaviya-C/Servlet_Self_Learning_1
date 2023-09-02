@@ -1,0 +1,33 @@
+ServletRequest is an Interface 
+
+which contains client side request information:
+               content type
+               content length
+               parameter name and values
+               header information
+               attributes
+
+it contains abstract methods:
+
+getParameter(); return type string
+getParameterValues()  Stringp+[]
+getParameterNames(); return type Enumeration<Object>
+getContentType()  string
+getContentLength() Int
+getServerName() string
+getServerPort() Int
+getInputStream() ServletInputStream
+
+
+
+in html file type name attribute as username
+
+in servlet file
+extends the httpservlet class
+override the doPost() methods
+inside pass the httpservletrequest , httpservletresponse
+from that take httpservletrequest reference name .getParameter("username")
+
+store that in string n
+create an object for printWriter
+by using that reference of printWriter .println (n);
