@@ -1,0 +1,67 @@
+it is created by the web container
+it is used to get the configuration information of the web.xml file
+
+if the configuration information is modified , it will automatically reflect to the servlet
+
+we don't need to modify inside the servlet
+
+less maintainanace
+
+this is the major advantage: --> we don't need to edit the servlet file if information is modified from the web.xml file
+
+
+methods:
+
+      getInitParameter(String name) String return type
+      getInitParameterNames() Enumeration  is the return type
+      getServletName()
+      getServletContext()
+
+
+ ServletConfig is an interface  --> so we no need to create an object
+
+ getServletConfig()  is a method that gives ServletConfig object
+
+
+ init-param is used to initialize the parameter of the servlet
+ 
+ init-param is the sub element of servlet 
+
+ init-param contains two element one is 
+ param-name
+ param-value
+
+
+ in web.xml
+ <servlet>
+<servlet-name></servlet-name>
+<servlet-class></servlet-class>
+
+<init-param>
+<param-name>username</param-name>
+<param-value>Kaviya</param-value>
+</init-param>
+
+
+
+ </servlet>
+
+ServletConfig config = getServletConfig();
+ we can access this using 
+               String name=config.getInitParameter("username")
+ store it in String
+
+
+ if u want to print all the parameter names 
+ mention all the init param inside of servlet one by one 
+
+and use this method getInitParameterNames() in the servlet 
+Enumeration<String> enum = config.getInitParameterNames();
+
+String s="";
+while(enum.hasMoreElements())
+{
+ s= enum.nextElement();
+ out.println(s);
+ out.println(config.getInitParameter(s))
+}
