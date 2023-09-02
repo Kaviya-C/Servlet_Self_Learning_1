@@ -1,0 +1,63 @@
+ServletContext:
+it is created by web container
+it is an interface
+it provides an interface between client and servelt
+it is used to get the configuration information of the web.xml file
+it can be used to set get remove attribute from the web.xml file
+
+any information is shared to all the servlet it is better to make it available for all the servlet
+EG:
+Database driver name,url , username,password etc
+
+context-param  any information is shared to all the servlet from the web.xml file
+
+
+Easy to maintain
+
+METHODS:
+
+    getInitParameterName() String
+    getInitParameterNames() Enumeration
+    setAttribute(String name,String values)
+    getAttribute(String name)
+    removeAttribute(String name);
+
+
+ As it is interface we can create an servletContext object using getServletContext() method of 
+ servletconfig interface 
+
+
+
+ context-param  is an subelement of web-app
+ this is in application scope
+
+ servletContext --- application scope
+
+ ServletContext context = getServletContext();
+ String name = context.getInitParameterName("username");
+
+ context-param 
+ contains two sub element that is --> param-name and param-value
+
+
+ ATTRIBUTE IN SERVLET:
+
+         application scope
+         request scope
+         session scope
+    
+
+ Application scope:
+                ServletContext context = getServletContext();
+                String name = context.setAttribute("name","kaviya");
+
+
+
+ Request scope:
+                request.setAttribute("name","John Mathew");
+                only this attribute is available to particular request 
+
+ Session scope:
+               HttpSession session =  request.getSession();
+               session.setAttribute("name","Saras");
+               
