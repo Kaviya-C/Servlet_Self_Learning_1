@@ -1,0 +1,139 @@
+Session means -- period of time  or interval of time
+
+Session Tracking is a way to maintain the state of an 
+object between login to logout
+
+
+http protocol is an  stateless  
+so we need to maintain the state by using session tracking techniques
+
+
+there are 4 ways 
+
+Cookies
+Hidden Form Field
+URL rewritting
+Http Session
+
+
+stateless  --->  each request is considered to be as new request
+
+
+why we use :
+             Session Tracking:
+              TO RECOGNIZE THE USER
+
+
+Lets See about Cookie:
+
+persistent cookie   -- valid for multiple session --->
+it cannot be removed even though we close the browser
+if we are doing sign out or logout then only cookie is deleted
+                   
+
+non-persisistent cookie
+valid for single session
+it can be removed when we closing the browser
+
+
+
+              mertis:
+                       used to maintain the state of an object.
+                       cookie works in an client side
+              Demerits:
+                        if the browser disable the cookie mean we are not able to store the data in cookie
+                        only text information can be added in a cookie
+
+two methods:
+addCookie()  -- response.addCookie()  -- return type string
+
+getCookies()   -- request.getCookies()  -- return type Cookie[]
+
+
+cookie constructor --- parameterized constructor it takes two both string type name and value
+
+
+some of the methods in cookie:
+
+setMaxAge()
+setName() 
+setValue()
+getName()
+getValue()
+
+
+ADDING COOKIE:
+
+Cookie c = new Cookie("User" , "kaviya");
+response.addCookie(c);
+
+
+DELETING COOKIE:
+
+Cookie c = new Cookie("user" , "");
+c.setMaxAge(0)
+response.addCookie(c);
+
+
+GETTING COOKIES:
+
+Cookie[] array = request.getCookies();
+for(int i=0;i<array.length;i++)
+{
+ out.println(c[i].getName()+""+c[i].getValue());
+}
+
+
+HIDDEN FORM FIELD IS AN ANOTHER SESSION TRACKING TECHNIQUES:
+
+
+it hide the value from one servlet
+and display the value in another servlet
+by using html tag ot type is "hidden"
+this will hide the values
+and that hidden value can be displayed in another servlet
+
+Merits:
+        it always works whether cookie is disabled or not
+Demerits:
+        only text information can be used
+        extra form submission required for each pages
+        it maintains at server side
+
+<input type="hidden" name="username" value="kaviya">
+
+URL REWRITTING TECHNIQUES IN SESSION TRACKING
+
+in the url we can able to send the name value pair 
+by that name we can able to access in another servlet
+each parameter seperated by ampersand symbol
+each parameter value is seperated by = symbol
+path and parameter is seperated by ? symbol
+
+url?name=value&name2=value2&name3=value3.....
+
+Merits:
+it always works whether cookie is disable or not
+extra form submission is not required for each pages
+
+Demerits:
+it always works with links
+only text information can be used
+
+
+
+HTTP SESSION IS AN INTERFACE TECHNIQUES IN SESSION TRACKING
+
+getSession() --- request.getSession()
+
+getSession(boolean create)  -- request 
+if there is no current session mean it create when we give boolean value as true
+
+
+HttpSession session = request.getSession();
+session.setAttribute("name","Kaviya");
+
+
+HttpSession ses = request.getSession(false);
+String user = (String)session.getAttribute("name");
+out.println(user);
