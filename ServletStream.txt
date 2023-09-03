@@ -1,0 +1,31 @@
+ServletInputStream
+              read the stream of binary data such as images from the request
+              it is an abstract class 
+we get object for this is getInputStream()  -- ServletInputStream returned
+
+only one method is there
+       int readLine(byte[] b, int off, int len);
+
+
+ServletOutputStream
+            write the stream of  binary data such as images etc into the response 
+            it is an abstract class
+it contains print and println
+which accept all primitive data types 
+
+getOutputStream -- return ServletInputStream 
+
+
+SERVLET WITH ANNOTATIONS:
+            @WebServlet("navigate through link give here")
+             by using this annotation we dont need web.xml file to map the servlet
+             tomcat 7 above only run this annotation
+             before version did not support this annotations
+
+
+ SINGLE THREAD MODEL INTERFACE:
+                it is deprecated now
+                at version 2.4 it is there
+                marker interface 
+                no methods are there
+                when u implement SINGLE THREAD MODEL INTERFACE mean only one request is processed at a time
