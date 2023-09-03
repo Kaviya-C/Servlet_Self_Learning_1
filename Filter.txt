@@ -1,0 +1,69 @@
+Filter -- 
+
+Create a filter file
+Configure the filter file in web.xml file
+
+
+it is an object which is invoked at the time of preprocessing or postprocessing
+
+it is mainly used to perform some filtering tasks 
+
+such as:
+        authentication filter -- if password is this mean use this or redirect
+        Validation filter -- age should be greater than 18 
+        Encryption filter
+        Data Compression
+        Logging
+
+Merits:
+      filter is plugable 
+      each entry is defined in web.xml file 
+      one entry do not depend another entry
+      less maintainanace
+
+
+
+CREATION OF FILTER FILE :
+
+New --> Filter
+
+Filter API:
+             Filter
+             FilterChain
+             FilterConfig
+
+Filter --  3  methods 
+              init(FilterConfig con) 
+              doFilter(HttpServletrequest ,HttpServletresponse , FilterChain)
+above method contains filter logic ,automatically executed by the web container 
+              destroy()
+Filter -- 1 method
+             doFilter(HttpServletrequest,HttpServletresponse)
+this method used to forward the request and response to another servlet 
+filterchain.doFilter(request,response)
+
+
+CONFIGURE THE FILTER IN WEB.XML File:
+
+Filter is a tag and sub element of web-app
+filter-name and filter-class is the tag which belongs to filter tag
+
+Filter-mapping sub element of web-app
+contains filter-name and url-pattern
+
+
+if u want to communicate the servlet and filter then 
+two ways:
+         use the same url-pattern for both  filter and servlet
+
+         another way   use same logic name 
+         include the servlet-name inside of filter mapping tag
+
+ one servlet can have many filter
+
+ one filter can have many servlet
+ <url-pattern> /*</url-pattern>
+ <url-pattern> /subdirectory/*</url-pattern>
+
+
+
