@@ -1,0 +1,62 @@
+Event mean --- change the state of an object
+               occurences of doing something
+Event Classes
+
+In javax.servlet package:
+       ServletRequestEvent
+       ServletContextEvent
+       ServletRequestAttributeEvent
+       ServletContextAttributeEvent
+
+In javax.servlet.http package
+       HttpSessionEvent
+       HttpSessionBindingEvent
+
+Event Interfaces
+
+In javax.servlet package:
+        ServletRequestListener
+        ServletContextListener
+        ServletRequestAttributeListener
+        ServletContextAttributeListener
+
+
+In javax.servlet.http package:
+         HttpSessionListener
+         HttpSessionAttributeListener
+         HttpSessionActivationListener
+         HttpSessionBindingListener
+
+
+ ServletContextEvent:
+
+IF U WANT TO SHARE THE INFORMATION FOR ALL THE SERVER THEN IT IS EFFICIENT WAY TO WRITE HERE
+
+LIKE: DATABASES CONNECTION 
+      CREATION OF TABLE   etc.,
+
+             created by web container at the time of deploying into the project from the request
+
+             two methods are there:
+             implements ServletContextListener we have to provide implementaion for this two methods:
+             contextIntialized(ServletContextEvent event)
+             contextDestroyed(ServletContextEvent event)  
+
+           
+
+
+HttpSessionEvent:
+
+IT IS NOTIFIED WHEN SESSION OBJECT IS CHANGED 
+
+maintain the log details of user login and logout
+counter 
+current logged in users
+
+
+it is an Class
+implemention HttpSessionListener we should give implementaion for two methods
+
+sessionCreated(HttpSessionEvent event)
+sessionDestroyed(HttpSessionEvent event)
+
